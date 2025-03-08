@@ -113,7 +113,7 @@ class Store:
                 break
 
         if not buyer:
-            print("❌ Buyer not found!")
+            print(" Buyer not found!")
             return
 
 
@@ -123,23 +123,23 @@ class Store:
                 break
 
         if not product:
-            print("❌ Product not found!")
+            print(" Product not found!")
             return
 
 
         if product.count < quantity:
-            print(f"❌ Not enough stock for {product_name}. Available: {product.count}")
+            print(f" Not enough stock for {product_name}. Available: {product.count}")
             return
 
         product.count -= quantity
         cls.purchases.append({"buyer": buyer.name, "product": product.name, "quantity": quantity})
-        print(f"✅ {buyer.name} bought {quantity} {product.name}(s) successfully!")
+        print(f" {buyer.name} bought {quantity} {product.name}(s) successfully!")
 
     @classmethod
     def show_purchases(cls):
-        print("\n🛒 Purchase History:")
+        print("\n Purchase History:")
         if not cls.purchases:
             print("No purchases yet.")
         for purchase in cls.purchases:
-            print(f"👤 {purchase['buyer']} bought {purchase['quantity']} x {purchase['product']}")
+            print(f" {purchase['buyer']} bought {purchase['quantity']} x {purchase['product']}")
         print("\n")
